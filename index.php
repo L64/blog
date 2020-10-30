@@ -1,12 +1,12 @@
 <?php
-if(isset($_GET['name'])) {
-  /* $id = $_GET['name'];
+if(isset($_GET['p'])) {
+  /* $id = $_GET['p'];
   function purifier() {
-    $includer = include $_GET['name'].".php";
+    $includer = include $_GET['p'].".php";
     $purifier_one = str_replace("\n", "<br>", $includer);
     return 
   } */
-  include "p/".$_GET['name'].".php";
+  include "data/posts/".$_GET['p'].".php";
 ?>
 <!DOCTYPE html>
 <html id="top">
@@ -14,9 +14,9 @@ if(isset($_GET['name'])) {
       <meta charset="utf-8">
       <title><?php echo $title; ?> by <?php echo $author; ?></title>
       <meta charset="utf-8">
-      <link rel="icon" href="img/favicon.png">
+      <link rel="icon" href="core/img/favicon.png">
       <meta name="viewport" content="width=device-width">
-      <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="core/style.css" />
   </head>
   <body>
     <div class="content">
@@ -34,7 +34,8 @@ if(isset($_GET['name'])) {
         </div>
         <footer>
           <article class="post_footer">
-            <p>2020-2020 <a href="https://lucas64.tk">Lucas</a>, based on <a href="https://repl.it/@templates/Personal-Blog-Site">Personal Blog Site</a></p>
+            <p>Coded by <a href="https://lucas64.tk">Lucas</a>. Based on <a href="https://repl.it/@templates/Personal-Blog-Site">Personal Blog Site</a>.</p>
+            <p>Pwd by <a href="https://forkaweso.me"><i class="fa fa-fork-awesome" aria-hidden="true"></i></a> - <a href="https://github.com/L64/blog">Source code</a></p>
           </article>
         </footer>
       </div>
@@ -53,18 +54,19 @@ if(isset($_GET['name'])) {
     <!-- Feedlang was created by Lucas M.T. in 2020 -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="core/style.css" />
+    <link rel="icon" href="core/img/favicon.png" type="image/x-icon" />
   </head>
   <body>
     <div class="content">
       <div>
         <main>
-          <?php include "feed.fwf"; ?>
+          <?php include "data/feed.fwf"; ?>
         </main>
         <footer>
           <article>
-            <p>2020-2020 <a href="https://lucas64.tk">Lucas</a>, based on <a href="https://repl.it/@templates/Personal-Blog-Site">Personal Blog Site</a></p>
+            <p>Coded by <a href="https://lucas64.tk">Lucas</a>. Based on <a href="https://repl.it/@templates/Personal-Blog-Site">Personal Blog Site</a>.</p>
+            <p>Pwd by <a href="https://forkaweso.me"><i class="fa fa-fork-awesome" aria-hidden="true"></i></a> - <a href="https://github.com/L64/blog">Source code</a></p>
           </article>
       </div>
     </div>
