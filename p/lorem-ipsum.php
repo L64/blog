@@ -29,6 +29,4 @@
     <br></br>
     Quisque a aliquam tortor, a volutpat velit. Sed ut arcu magna. Pellentesque posuere, tellus eu egestas efficitur, lectus enim efficitur nunc, in varius justo nisl ac nulla. Suspendisse nibh neque, cursus id tincidunt sit amet, feugiat id lectus. Nam.
   ";
-  # IMPORTANT!!!!!
-  include "posts.php";
 ?>
