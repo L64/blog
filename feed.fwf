@@ -1,19 +1,21 @@
 <!-- Feedlang -->
 <!-- The file extention of Feedlang is ".flwf" (Feedlang Web Feed) -->
 <!-- The icon of the feed is in "icon" -->
-<feedlang version="Alpha01">
+<feedlang version="Alpha011">
   <header>
-    <img src="https://avatars2.githubusercontent.com/u/57920717?s=460&u=eb45becf22894dacc830d3f8b278b7bcad10497e&v=4" width="50px" />
+    <img src="https://avatars2.githubusercontent.com/u/57920717?s=460&u=eb45becf22894dacc830d3f8b278b7bcad10497e&v=4">
     <meta charset="utf-8">
     <name>Lucas' Blog</name>
     <meta name="Description" content="My blog">
-    <meta name="Keywords" content="HTML,CSS,JavaScript,PHP,Feedlang,flwf,Blog,Feed">
+    <meta name="Keywords" content="HTML,CSS,PHP,Feedlang,flwf,Blog,Feed">
   </header>
   <!-- This article block is a single blog post! Copy and paste to add additional posts -->
-  <article>
-    <aHead><a href="p/lorem-ipsum.php">Lorem Ipsum</a></aHead>
-    <hr />
-    <p>Lorem Ipsum theory</p>
-    <date>14-08-2020</date>
-  </article>
+  <feed>
+    <article>
+      <aHead><a href="?p=lorem-ipsum">Lorem Ipsum</a></aHead>
+      <hr />
+      <p>Lorem Ipsum theory</p>
+      <date>14-08-2020</date>
+    </article>
+  </feed>
 </feedlang>
