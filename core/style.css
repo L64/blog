@@ -118,6 +118,7 @@ footer p {
 }
 .downtoup_arrow {
   position: fixed;
+  color: black;
   background: white;
   text-align: center;
   /* display: run-in; */
@@ -129,8 +130,4 @@ footer p {
   border-radius: 100%;
   border: 5px solid grey;
   padding: 0.1%;
-}
-.downtoup_arrow a {
-  color: grey;
-  text-decoration: none;
 }
