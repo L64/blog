@@ -6,6 +6,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  color: black;
   margin: 0;
   padding: 0;
   background: grey;
@@ -43,6 +44,13 @@ header img {
   background: white;
   border-radius: 100%;
   margin: 0 20px 0 40px;
+}
+links {
+  display: flex;
+  list-style-type: none;
+}
+links li {
+  margin: 10px;
 }
 
 /* Links */
