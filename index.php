@@ -1,5 +1,4 @@
 <?php
-$links = true;
 session_start();
 if(isset($_GET['theme'])) {
   if($_GET['theme'] == "") {
