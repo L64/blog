@@ -10,13 +10,13 @@ body {
   margin: 0;
   padding: 0;
   background: grey;
-	font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 article {
-  border-radius: 5px;
-  border: 5px;
+	border-radius: 5px;
+	border: 5px;
 	border-style: none outset outset none;
-	margin: 3.5%;
+	margin: 10px 3.5%;
 	/* width: 50%;
 	position: absolute; */
 	background: white;
