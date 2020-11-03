@@ -1,3 +1,19 @@
+<?php
+session_start();
+if(isset($_GET['theme'])) {
+  if($_GET['theme'] == "") {
+    die("<!DOCTYPE html>\n<html><body><h1>Error, no theme found, please, put a correct one: <a href=\"?theme=light\">Light</a> - <a href=\"?theme=halloween\">Dark</a></h1></body></html>");
+  } else {
+    $_SESSION['theme'] = $_GET['theme'];
+  }
+}
+if(isset($_SESSION['theme'])) {
+  $theme = $_SESSION['theme'];
+} else {
+  $theme = "light";
+  $_SESSION['theme'] = $theme;
+}
+?>
 <!DOCTYPE html>
 <html id="top">
   <head>
@@ -7,7 +23,8 @@
       <meta charset="utf-8">
       <link rel="icon" href="core/favicon.png">
       <meta name="viewport" content="width=device-width">
-      <link rel="stylesheet" href="core/style.css" />
+      <link rel="manifest" href="manifest.json">
+      <link rel="stylesheet" href="core/themes/<?php if($theme=="light") { ?>light.css<?php } elseif($theme=="dark") { ?>dark.css<?php } elseif($theme=="halloween") { ?>halloween.css<?php } else { ?>light.css<?php } ?>" />
   </head>
   <body>
     <div class="content">
@@ -17,7 +34,7 @@ if(isset($_GET['p'])) {
   function purifier() {
     $includer = include $_GET['p'].".php";
     $purifier_one = str_replace("\n", "<br>", $includer);
-    return 
+    return
   } */
   include "data/posts/".$_GET['p'].".php";
 ?>
@@ -38,7 +55,7 @@ if(isset($_GET['p'])) {
       <title>Blog</title>
       <div>
         <main>
-          <?php include "data/feed.fwf"; ?>
+<?php include "data/feed.fwf"; ?>
         </main>
 <?php } ?>
         <footer>
@@ -48,7 +65,14 @@ if(isset($_GET['p'])) {
           </article>
         </footer>
       </div>
-      <a href="#top"><button class="downtoup_arrow"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></button></a>
+      <a href="#top"><button class="bp downtoup_arrow"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></button></a>
+      <?php if($theme == "light") { ?>
+      <a href="?theme=dark"><button class="bp theme"><i class="fa fa-moon fa-2x" aria-hidden="true"></i></button></a>
+      <?php } elseif($theme == "dark") { ?>
+      <a href="?theme=light"><button class="bp theme"><i class="fa fa-sun fa-2x" aria-hidden="true"></i></button></a>
+      <?php } elseif($theme == "light") { ?>
+      <a href="?theme=dark"><button class="bp theme"><i class="fa fa-moon fa-2x" aria-hidden="true"></i></button></a>
+      <?php } ?>
     </div>
     <!-- Blog posts based on Change-the-Text -->
     <!-- Coded by Lucas (lucas64.tk) -->
