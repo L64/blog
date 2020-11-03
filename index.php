@@ -1,8 +1,9 @@
 <?php
+$links = true;
 session_start();
 if(isset($_GET['theme'])) {
   if($_GET['theme'] == "") {
-    die("<!DOCTYPE html>\n<html><body><h1>Error, no theme found, please, put a correct one: <a href=\"?theme=light\">Light</a> - <a href=\"?theme=halloween\">Dark</a></h1></body></html>");
+    die("<!DOCTYPE html>\n<html><body><h1>Error, no theme found, please, put a correct one: <a href=\"?theme=light\">Light</a> - <a href=\"?theme=dark\">Dark</a></h1></body></html>");
   } else {
     $_SESSION['theme'] = $_GET['theme'];
   }
@@ -55,7 +56,7 @@ if(isset($_GET['p'])) {
       <title>Blog</title>
       <div>
         <main>
-<?php include "data/feed.fwf"; ?>
+<?php include "data/feed.html"; ?>
         </main>
 <?php } ?>
         <footer>
@@ -88,6 +89,6 @@ if(isset($_GET['p'])) {
        } ?>
     </div>
     <!-- Blog posts based on Change-the-Text -->
-    <!-- Coded by Lucas (lucas64.tk)-->
+    <!-- Coded by Lucas (lucas64.tk) -->
   </body>
 </html>
