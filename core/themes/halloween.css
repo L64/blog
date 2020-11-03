@@ -45,6 +45,13 @@ header img {
   border-radius: 100%;
   margin: 0 20px 0 40px;
 }
+links {
+  display: flex;
+  list-style-type: none;
+}
+links li {
+  margin: 10px;
+}
 
 /* Links */
 a:link {
