@@ -146,5 +146,19 @@ footer p {
 }
 iframe {
   width: 100%;
-  height: 100%;
+  height: 150%;
+}
+@media screen and (min-width: 900px) {
+  iframe {
+    width: 200%;
+    height: 300px;
+  }
+}
+img {
+  width: 90%;
+  height: 50%;
+}
+.replicon {
+  width: 15px;
+  height: 15px;
 }
