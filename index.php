@@ -1,4 +1,5 @@
 <?php
+include "data/settings.php";
 session_start();
 if(isset($_GET['theme'])) {
   if($_GET['theme'] == "") {
@@ -15,19 +16,23 @@ if(isset($_SESSION['theme'])) {
 }
 ?>
 <!DOCTYPE html>
-<html id="top">
+<html>
   <head>
       <!-- Thanks to @Vandesm14 and Repl.it for the original template (@templates/Personal-Blog-Site) -->
       <!-- Feed created using Feedlang -->
       <!-- Feedlang was created by Lucas M.T. in 2020 -->
       <meta charset="utf-8">
+      <link rel="alternate" type="application/feedlang" title="Feedlang Feed" href="data/feed.html" />
       <link rel="icon" href="core/favicon.png">
       <meta name="viewport" content="width=device-width">
+      <!-- PWA -->
       <link rel="manifest" href="manifest.json">
+      <!-- Theme -->
       <link rel="stylesheet" href="core/themes/<?php if($theme=="light") { ?>light.css<?php } elseif($theme=="dark") { ?>dark.css<?php } elseif($theme=="halloween") { ?>halloween.css<?php } else { ?>light.css<?php } ?>" />
-  </head>
-  <body>
-    <div class="content">
+      <!-- Open Graph -->
+      <!-- <meta property="og:url" content="<?php // echo $_SERVER['HTTP_REFERER']; ?>" />
+      <meta property="og:image" content="<?php // echo $icon_final; ?>" />
+      <meta property="og:type" content="webpage" /> -->
 <?php
 if(isset($_GET['p'])) {
   /* $id = $_GET['p'];
@@ -38,7 +43,11 @@ if(isset($_GET['p'])) {
   } */
   include "data/posts/".$_GET['p'].".php";
 ?>
-      <title><?php echo $title; ?> by <?php echo $author; ?></title>
+    <!-- <meta property="og:title" content="<?php echo $title; ?>" /> -->
+    <title><?php echo $title." by ".$author." | "." ".$name; ?></title>
+  </head>
+  <body>
+    <main>
       <div class="art_content">
         <div style="display: flex;">
           <h3 class="pubBack" style="margin: 10;"><a href="<?php echo $_SERVER['PHP_SELF']; ?>"><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i></a></h3>
@@ -52,20 +61,23 @@ if(isset($_GET['p'])) {
           </div>
         </div>
 <?php } else { ?>
-      <title>Blog</title>
+    <!-- <meta property="og:title" content="<?php echo $name; ?>" /> -->
+    <title><?php echo $name; ?></title>
+  </head>
+  <body>
+    <main>
       <div>
-        <main>
-<?php include "data/feed.html"; ?>
-        </main>
+<?php include "feed.html"; ?>
+
 <?php } ?>
         <footer>
           <article class="post_footer">
             <p>Coded by <a href="https://lucas64.tk">Lucas</a>. Based on <a href="https://repl.it/@templates/Personal-Blog-Site">Personal Blog Site</a>.</p>
-            <p>Pwd by <a href="https://forkaweso.me"><i class="fa fa-fork-awesome" aria-hidden="true"></i></a> & hosted by <a href="https://repl.it"><img width="15px" height="15px" src="https://repl.it/public/images/favicon.ico" alt="Repl.it"></a> - <a href="https://github.com/L64/blog">Source code</a></p>
+            <p>Pwd by <a href="https://forkaweso.me"><i class="fa fa-fork-awesome" aria-hidden="true"></i></a> & hosted by <a href="https://repl.it"><img class="replicon" width="15px" height="15px" src="https://repl.it/public/images/favicon.ico" alt="Repl.it"></a> - <a href="https://codeberg.org/lucas/blog">Source code</a></p>
           </article>
         </footer>
       </div>
-      <a href="#top"><button class="bp downtoup_arrow"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></button></a>
+      <a href="#"><button class="bp downtoup_arrow"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></button></a>
       <?php
       if (isset($_GET['p'])) {
         if($theme == "light") { ?>
@@ -86,7 +98,7 @@ if(isset($_GET['p'])) {
        <?php
         }
        } ?>
-    </div>
+    </main>
     <!-- Blog posts based on Change-the-Text -->
     <!-- Coded by Lucas (lucas64.tk) -->
   </body>
